@@ -1,0 +1,88 @@
+LangChain is a framework for building applications with large language models. It provides abstractions for prompts, models, output parsers, retrievers, vector stores, tools, and chains.
+
+---
+RAG stands for Retrieval-Augmented Generation. A RAG system retrieves relevant external documents and gives them to a language model as context before generating an answer.
+
+---
+A basic RAG pipeline usually contains document loading, text splitting, embedding, vector indexing, retrieval, and answer generation. Each stage affects the final answer quality.
+
+---
+Chunking is the process of splitting documents into smaller units. Good chunks should be small enough for focused retrieval but large enough to preserve useful context.
+
+---
+RecursiveCharacterTextSplitter is a common LangChain splitter. It tries to split text using separators such as paragraphs, lines, spaces, and characters while respecting a chunk size.
+
+---
+FAISS is a vector search library that can store document embeddings and retrieve the nearest chunks for a query embedding. It is commonly used in simple local RAG demos.
+
+---
+Embeddings convert text into numeric vectors. Similar meanings should have vectors that are close to each other in the vector space, which enables semantic retrieval.
+
+---
+A retriever is responsible for returning relevant documents for a user query. In LangChain, a vector store can often be converted into a retriever with search parameters such as top-k.
+
+---
+Query expansion improves retrieval for short or underspecified queries. It adds synonyms, related terms, and context so the retriever has more useful signals.
+
+---
+For example, the query "LangChain memory" can be expanded into "LangChain memory types, conversation buffer memory, chat history, session state, and context retention."
+
+---
+Query decomposition improves retrieval for complex questions. It breaks a multi-part question into smaller atomic sub-questions that can each retrieve focused context.
+
+---
+A question such as "How does LangChain use memory and agents compared with CrewAI?" can be decomposed into questions about LangChain memory, LangChain agents, CrewAI agents, and comparison points.
+
+---
+HyDE means Hypothetical Document Embeddings. The system first generates a hypothetical answer-like document and then uses that generated text as the retrieval query.
+
+---
+HyDE can help when direct retrieval fails because the hypothetical document may contain richer vocabulary and concepts that are closer to the target documents.
+
+---
+Retrieval evaluation checks whether the retrieved results are good enough. A simple evaluator can use the number of returned chunks and the average similarity score.
+
+---
+If retrieval quality is below a threshold, an adaptive RAG system can retry with a better query strategy such as HyDE instead of immediately generating an answer.
+
+---
+LangGraph is a library for building stateful, graph-based LLM applications. It represents workflows as nodes and edges with a shared state object.
+
+---
+A LangGraph StateGraph can route execution conditionally. For example, after query analysis the graph can choose query expansion, query decomposition, or direct retrieval.
+
+---
+State in LangGraph is often represented with a TypedDict. Nodes read fields from the state and return updates that are merged into the next state.
+
+---
+Conditional edges in LangGraph are useful for adaptive RAG. They can send simple questions to expansion, complex questions to decomposition, and failed retrieval to HyDE.
+
+---
+LangChain PromptTemplate lets developers define reusable prompts with variables. The prompt can be piped into a chat model and then into an output parser.
+
+---
+StrOutputParser is a LangChain output parser that converts a model response into a plain string. It is useful for query expansion, decomposition, HyDE, and final answers.
+
+---
+ChatOpenAI in LangChain can connect to OpenAI-compatible APIs when an API key, model name, and base URL are provided.
+
+---
+CrewAI is a framework for orchestrating collaborative AI agents. It emphasizes role-based agents, tasks, crews, and process flows for multi-agent workflows.
+
+---
+LangChain agents commonly use tools and model reasoning loops to decide which action to take. They are flexible for tool calling, retrieval, and application integration.
+
+---
+CrewAI agents are often organized around role, goal, backstory, and assigned tasks. This makes it natural to model a team of specialized agents.
+
+---
+Memory in LLM applications stores previous conversation turns or useful context. It helps maintain continuity across interactions when the model needs prior information.
+
+---
+LangChain memory patterns can include conversation buffers, summarized memory, vector-backed memory, and custom memory implementations depending on the application.
+
+---
+A good final RAG answer should be grounded in retrieved context. If the context does not contain the answer, the assistant should say the knowledge base is insufficient.
+
+---
+A professional Streamlit RAG demo should display the selected route, the enhanced query or sub-questions, retrieval scores, HyDE fallback status, retrieved chunks, and final answer.

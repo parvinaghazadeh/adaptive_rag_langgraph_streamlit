@@ -1,0 +1,11 @@
+streamlit>=1.36.0
+langchain>=0.2.14
+langchain-core>=0.2.35
+langchain-community>=0.2.12
+langchain-openai>=0.1.22
+langchain-text-splitters>=0.2.2
+langgraph>=0.2.14
+faiss-cpu>=1.8.0.post1
+openai>=1.40.0
+python-dotenv>=1.0.1
+numpy>=1.26.0
