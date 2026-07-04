@@ -167,7 +167,7 @@ adaptive_rag_langgraph_streamlit/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/adaptive-rag-langgraph-streamlit.git
+git clone https://github.com/parvinaghazadeh/adaptive-rag-langgraph-streamlit.git
 cd adaptive-rag-langgraph-streamlit
 ```
 
