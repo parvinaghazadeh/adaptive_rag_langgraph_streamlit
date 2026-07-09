@@ -10,6 +10,11 @@ The project is intentionally compact and educational. It focuses on the control 
 
 ## Reference Architecture from the Assignment
 
+![Assignment Adaptive RAG Architecture](assets/adaptive_rag_pipeline_reference.jpg)
+
+---
+## Inside the Adaptive Rag Pipeline
+
 The assignment architecture describes an adaptive RAG pipeline with three main query paths:
 
 1. **Short / simple query path** → Query Expansion
@@ -17,8 +22,7 @@ The assignment architecture describes an adaptive RAG pipeline with three main q
 3. **Well-formed query path** → Direct Retrieval
 4. **Low retrieval quality path** → HyDE fallback and re-retrieval
 
-![Assignment Adaptive RAG Architecture](assets/adaptive_rag_pipeline_reference.jpg)
-
+![Assignment Adaptive RAG Architecture](assets/Inside_the_Adaptive_RAG_Pipeline_Architecture.png)
 ---
 
 ## Implemented Architecture
@@ -156,6 +160,7 @@ adaptive_rag_langgraph_streamlit/
 │   └── prompts.py
 ├── assets/
 │   └── adaptive_rag_pipeline_reference.jpg
+│   └── Inside_the_Adaptive_RAG_Pipeline_Architecture.png
 └── data/
     └── sample_knowledge_base.txt
 ```
