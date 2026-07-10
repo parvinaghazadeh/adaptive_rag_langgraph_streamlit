@@ -1,16 +1,10 @@
 # Adaptive RAG Pipeline with LangChain, LangGraph, and Streamlit
 
-This repository is a course assignment implementation of an **Adaptive Retrieval-Augmented Generation (RAG)** pipeline.
+This repository is a educational implementation of an **Adaptive Retrieval-Augmented Generation (RAG)** pipeline.
 
 The app receives a user question, analyzes the query, dynamically chooses the best query-enhancement strategy, retrieves relevant chunks from a small knowledge base, evaluates retrieval quality, and falls back to **HyDE (Hypothetical Document Embeddings)** when retrieval quality is below a configurable threshold.
 
 The project is intentionally compact and educational. It focuses on the control flow and adaptive decision logic rather than on building a production-scale vector database.
-
----
-
-## Reference Architecture from the Assignment
-
-![Assignment Adaptive RAG Architecture](assets/adaptive_rag_pipeline_reference.jpg)
 
 ---
 ## Inside the Adaptive Rag Pipeline
@@ -22,7 +16,7 @@ The assignment architecture describes an adaptive RAG pipeline with three main q
 3. **Well-formed query path** → Direct Retrieval
 4. **Low retrieval quality path** → HyDE fallback and re-retrieval
 
-![Assignment Adaptive RAG Architecture](assets/Inside_the_Adaptive_RAG_Pipeline_Architecture.png)
+![Assignment Adaptive RAG Architecture](assets/Adaptive_RAG_Pipeline_Architecture.png)
 ---
 
 ## Implemented Architecture
@@ -68,9 +62,9 @@ flowchart TD
 
 ---
 
-## How This Project Uses the Course Notebooks
+## How This Project Uses the techniques
 
-The course notebooks introduced three query-enhancement techniques. This project turns those notebook ideas into one runnable Streamlit application.
+Resources introduced three query-enhancement techniques. This project turns those notebook ideas into one runnable Streamlit application.
 
 ### 1. Query Expansion
 
@@ -159,8 +153,7 @@ adaptive_rag_langgraph_streamlit/
 │   ├── pipeline.py
 │   └── prompts.py
 ├── assets/
-│   └── adaptive_rag_pipeline_reference.jpg
-│   └── Inside_the_Adaptive_RAG_Pipeline_Architecture.png
+│   └── Adaptive_RAG_Pipeline_Architecture.png
 └── data/
     └── sample_knowledge_base.txt
 ```
@@ -316,7 +309,7 @@ LangGraph is a good fit because it models this workflow as a graph with stateful
 
 ## Educational Notes
 
-This project is designed for a classroom exercise. The knowledge base contains about 30 small sections, and the vector store is rebuilt when the app configuration changes.
+This project is designed for a educational sector. The knowledge base contains about 30 small sections, and the vector store is rebuilt when the app configuration changes.
 
 For a production system, you would likely improve the project with:
 

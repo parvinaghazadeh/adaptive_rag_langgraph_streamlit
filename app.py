@@ -12,7 +12,7 @@ load_dotenv()
 
 ROOT_DIR = Path(__file__).parent
 SAMPLE_KB_PATH = ROOT_DIR / "data" / "sample_knowledge_base.txt"
-REFERENCE_IMAGE_PATH = ROOT_DIR / "assets" / "adaptive_rag_pipeline_reference.jpg"
+REFERENCE_IMAGE_PATH = ROOT_DIR / "assets" / "Adaptive_RAG_Pipeline_Architecture.png"
 
 
 st.set_page_config(
